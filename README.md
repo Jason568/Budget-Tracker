@@ -4,13 +4,18 @@ A simple console-based budget tracker written in Java for managing personal fina
 
 QUICK START
 Compile: javac BudgetTracker.java
+
 Run: java BudgetTracker
 
 BASIC COMMANDS
 Add transaction: java BudgetTracker add type category amount note
+
 View transactions: java BudgetTracker list YYYY-MM
+
 Show summary: java BudgetTracker summary YYYY-MM
+
 Monthly balance: java BudgetTracker balance
+
 Help: java BudgetTracker
 
 HOW TO USE
