@@ -6,18 +6,6 @@ import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.*;
 
-/**
- * Simple Budget Tracker in Java
- * 
- * Usage:
- *   java BudgetTracker add expense Food 12.50 "Lunch"
- *   java BudgetTracker add income Salary 2000 "Paycheck"
- *   java BudgetTracker list
- *   java BudgetTracker list 2025-09
- *   java BudgetTracker summary
- *   java BudgetTracker summary 2025-09
- *   java BudgetTracker balance
- */
 public class BudgetTracker {
     private static final String CSV_FILE = "transactions.csv";
     private static final DateTimeFormatter DATE_FMT = DateTimeFormatter.ofPattern("yyyy-MM-dd");
@@ -63,7 +51,7 @@ public class BudgetTracker {
     private static List<Transaction> loadTransactions() {
         List<Transaction> list = new ArrayList<>();
         try (BufferedReader br = new BufferedReader(new FileReader(CSV_FILE))) {
-            String line = br.readLine(); // skip header
+            String line = br.readLine();
             while ((line = br.readLine()) != null) {
                 String[] p = line.split(",", 5);
                 if (p.length < 5) continue;
@@ -169,4 +157,3 @@ public class BudgetTracker {
         """);
     }
 }
-
